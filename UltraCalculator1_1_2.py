@@ -1,58 +1,56 @@
 import os
-# Cabeca da calculadora
-class Contas:
-    def __init__(self, num1, num2, form):
-        self.numero1 = num1
-        self.numero2 = num2
-        self.formatar = form
-    
-    # Primeira funcao a qual soma 2 valore
-    def somar(self):
-        total = self.numero1 + self.numero2
-        formatar = format(total, ",").replace(",", ".")
-        print(f'O resultado da adição de {self.numero1} + {self.numero2} resulta em: ', formatar)
-    
-    def subtrai(self):
-        total = self.numero1 - self.numero2
-        formatar = format(total, ",").replace(",", ".")
-        print(f'O resultado da subtração de {self.numero1} - {self.numero2} resulta em: ', total)
-    
-    def multiplica(self):
-        total = self.numero1 * self.numero2
-        formatar = format(total, ",").replace(",", ".")
-        print(f'O resultado da multiplicação de {self.numero1} x {self.numero2} resulta em: ', total)
-        
+# Calculator Header
+class Calculations:
+    def __init__(self, num1, num2, format_style):
+        self.number1 = num1
+        self.number2 = num2
+        self.formatting = format_style
+
+    # First function which adds 2 values
+    def add(self):
+        total = self.number1 + self.number2
+        formatted = format(total, ",").replace(",", ".")
+        print(f'The result of adding {self.number1} + {self.number2} is: ', formatted)
+
+    def subtract(self):
+        total = self.number1 - self.number2
+        formatted = format(total, ",").replace(",", ".")
+        print(f'The result of subtracting {self.number1} - {self.number2} is: ', total)
+
+    def multiply(self):
+        total = self.number1 * self.number2
+        formatted = format(total, ",").replace(",", ".")
+        print(f'The result of multiplying {self.number1} x {self.number2} is: ', total)
+
     def divide(self):
-        total = self.numero1 / self.numero2
-        formatar = format(total, ",").replace(",", ".")
-        print(f'O resultado da divisão de {self.numero1} ÷ {self.numero2} resulta em: ', total)
-    
+        total = self.number1 / self.number2
+        formatted = format(total, ",").replace(",", ".")
+        print(f'The result of dividing {self.number1} ÷ {self.number2} is: ', total)
+
     def menu(self):
-        print('''Escolha uma das opções abaixo:
-[1]Adição
-[2]Subtração
-[3]Multiplicação
-[4]Divisão
-[0]Encerrar''')
+        print('''Choose one of the options below:
+[1]Addition
+[2]Subtraction
+[3]Multiplication
+[4]Division
+[0]Exit''')
 
-
-# Aplica informacoes nas variaveis de Contas e exibe um menu ao usuario
-print('Abaixo digite dois numeros que serão utilizados a seguir')
-x = Contas(float(input('Numero1: ')), float(input('Numero2: ')), ",")
+# Apply information to the variables in Calculations and display a menu to the user
+print('Below, enter two numbers that will be used next')
+x = Calculations(float(input('Number1: ')), float(input('Number2: ')), ",")
 x.menu()
 
-# Esta parte recolhe a informacao de qual operacao sera executada abaixo
-user = int(input('...'))
+# This part collects the information about which operation will be executed below
+user_choice = int(input('...'))
 
- # Executa funcao da classe Contas para realizar as operacoes
-
-if user == 1:
-    x.somar()
-elif user == 2:
-    x.subtrai()
-elif user == 3:
-    x.multiplica()
-elif user == 4:
+# Execute a function from the Calculations class to perform the operations
+if user_choice == 1:
+    x.add()
+elif user_choice == 2:
+    x.subtract()
+elif user_choice == 3:
+    x.multiply()
+elif user_choice == 4:
     x.divide()
 else:
     print(':)')
