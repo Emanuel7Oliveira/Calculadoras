@@ -12,3 +12,5 @@ A simple calculator program written in Python that performs basic arithmetic ope
 3. Run the script using:
    ```bash
    python "One_of_the_name_files_in_the_project".py
+
+#### Requires Python 3.x
